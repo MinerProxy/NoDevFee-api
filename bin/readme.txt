@@ -1,14 +1,16 @@
-extern "C" _declspec(dllexport) BOOL Start(LPTCSTR worker);
+extern "C" _declspec(dllexport) BOOL Start(const char* url);
 extern "C" _declspec(dllexport) BOOL Stop();
 extern "C" _declspec(dllexport) BOOL IsRunning();
 extern "C" _declspec(dllexport) INT GetSubmitWorkNum();
-extern "C" _declspec(dllexport) BOOL SetShowMsg(BOOL status);
-extern "C" _declspec(dllexport) BOOL SetLogStatus(BOOL status);
+extern "C" _declspec(dllexport) VOID SetShowMsg(BOOL status);
+extern "C" _declspec(dllexport) VOID SetLogStatus(BOOL status);
+extern "C" _declspec(dllexport) VOID LogMsg(const char* msg);
+extern "C" _declspec(dllexport) VOID SetLogPathFile(const char* file);
 
-ÆäÖĞ Start Ö§³Ö²»Í¬¿ó³ØºÍÇ®°ü£º
+å…¶ä¸­ Start æ”¯æŒä¸åŒçŸ¿æ± å’Œé’±åŒ…ï¼š
 
-1. ¿ó»úÃû£º¿ÉÒÔÎª¿Õ£¬½«Ê¹ÓÃÄÚºË¿ó»úÃû
-2. ºÍÄÚºËÏàÍ¬¿ó³Ø£¬µ«²»Í¬ÕËºÅ»òÇ®°ü£º {wallet}.{workername}£¬ ±ÈÈçÉèÖÃ: mywallet1234.MyNoDevFee
-3. ¿ó³ØµØÖ·´øÇ®°ü¸ñÊ½£¬½«·´³éË®À¹½Øµ½ÆäËû¿ó³ØºÍÖ¸¶¨Ç®°ü£º{tcp|ssl}://{poolhost}:{poolport}/{wallet}/{workername}
-    ±ÈÈçÀ¹½Øµ½£º  tcp://eth-pool.beepool.org:9530/mywallet123/MyNoDevFee
+1. çŸ¿æœºåï¼šå¯ä»¥ä¸ºç©ºï¼Œå°†ä½¿ç”¨å†…æ ¸çŸ¿æœºå
+2. å’Œå†…æ ¸ç›¸åŒçŸ¿æ± ï¼Œä½†ä¸åŒè´¦å·æˆ–é’±åŒ…ï¼š {wallet}.{workername}ï¼Œ æ¯”å¦‚è®¾ç½®: mywallet1234.MyNoDevFee
+3. çŸ¿æ± åœ°å€å¸¦é’±åŒ…æ ¼å¼ï¼Œå°†åæŠ½æ°´æ‹¦æˆªåˆ°å…¶ä»–çŸ¿æ± å’ŒæŒ‡å®šé’±åŒ…ï¼š{tcp|ssl}://{poolhost}:{poolport}/{wallet}/{workername}
+    æ¯”å¦‚æ‹¦æˆªåˆ°ï¼š  tcp://eth-pool.beepool.org:9530/mywallet123/MyNoDevFee
 
